@@ -452,6 +452,16 @@ ol {
 .hero.is-video {
   height: 100%;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 8;
+}
 .hero__slider.owl-carousel .owl-item.active .hero__text span {
   top: 0;
   opacity: 1;
@@ -514,22 +524,22 @@ ol {
   text-transform: uppercase;
   margin-bottom: 18px;
   position: relative;
-  top: 100px;
-  opacity: 0;
+  /* top: 100px; */
+  /* opacity: 0; */
   -webkit-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   transition: all, 0.3s;
 }
 .hero__text h2 {
   color: #ffffff;
-  font-size: 60px;
+  font-size: 54px;
   font-weight: 700;
   line-height: 70px;
   text-transform: uppercase;
   margin-bottom: 38px;
   position: relative;
-  top: 100px;
-  opacity: 0;
+  /* top: 100px; */
+  /* opacity: 0; */
   -webkit-transition: all, 0.5s;
   -o-transition: all, 0.5s;
   transition: all, 0.5s;
@@ -548,7 +558,7 @@ ol {
 }
 .is-video .hero__text h2 {
   color: #ffffff;
-  font-size: 60px;
+  font-size: 54px;
   font-weight: 700;
   line-height: 70px;
   text-transform: uppercase;
@@ -587,12 +597,14 @@ ol {
 }
 
 .hero .content {
-  position: relative;
+  position: absolute;
   z-index: 1;
   color: white;
   top: 40%;
   font-size: 2rem;
   font-family: Arial, sans-serif;
+  width: 100%;
+  z-index: 8;
 }
 
 /*---------------------
@@ -1287,7 +1299,39 @@ ol {
   width: auto;
   display: inline-block;
 }
+.logo .owl-nav {
+  display: flex !important;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
+.logo .owl-nav button {
+  background: #cb0000 !important;
+  color: #ffffff !important;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo .owl-nav button.owl-next {
+  margin-right: -24px;
+}
+.logo .owl-nav button.owl-prev {
+  margin-left: -24px;
+}
+
+.logo .owl-nav button span {
+  font-size: 24px;
+}
+
+.logo .owl-carousel {
+  width: calc(100% - 50px);
+  margin: 0 auto;
+}
 /*---------------------
   Portfolio
 -----------------------*/
