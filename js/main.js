@@ -143,6 +143,7 @@
     smartSpeed: 1200,
     autoHeight: false,
     autoplay: true,
+    nav: true,
     responsive: {
       992: {
         items: 5,
@@ -181,10 +182,6 @@
           easing: "swing",
           step: function (now) {
             $(this).text(Math.ceil(now));
-          },
-          complete: function () {
-            // This runs after animation finishes
-            $(this).next().removeClass("hidden").fadeIn();
           },
         }
       );
