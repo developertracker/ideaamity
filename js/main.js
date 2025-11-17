@@ -20,12 +20,12 @@
     /*------------------
             Portfolio filter
         --------------------*/
-    $(".portfolio__filter li").on("click", function () {
-      $(".portfolio__filter li").removeClass("active");
+    $(".filter li").on("click", function () {
+      $(".filter li").removeClass("active");
       $(this).addClass("active");
     });
-    if ($(".portfolio__gallery").length > 0) {
-      var containerEl = document.querySelector(".portfolio__gallery");
+    if ($(".filter__gallery").length > 0) {
+      var containerEl = document.querySelector(".filter__gallery");
       var mixer = mixitup(containerEl);
     }
   });
@@ -94,6 +94,11 @@
     smartSpeed: 1200,
     autoHeight: false,
     autoplay: true,
+    nav: true,
+    navText: [
+      "<i class='fa fa-arrow-left'></i>",
+      "<i class='fa fa-arrow-right'></i>",
+    ], // Custom icons
     responsive: {
       992: {
         items: 3,
