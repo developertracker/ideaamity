@@ -1092,6 +1092,40 @@ ol {
 }
 
 /*---------------------
+  Whatsapp Button
+-----------------------*/
+#whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  text-decoration: none;
+}
+
+#whatsapp-btn img {
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s;
+}
+#whatsapp-btn img:hover {
+  transform: scale(1.1);
+}
+#whatsapp-btn:active {
+  transform: translateY(1px);
+}
+@media (min-width: 1200px) {
+  #whatsapp-btn {
+    bottom: 32px;
+    right: 32px;
+  }
+}
+
+/*---------------------
   Breadcrumb
 -----------------------*/
 .breadcrumb-option {
@@ -1201,12 +1235,12 @@ ol {
   max-width: 100%;
 }
 .testimonial__slider.owl-carousel .owl-nav {
-    display: flex;
-    position: absolute;
-    top: -30px;
-    right: 20px;
-    gap: 16px;
-    color: #bbbdbc;
+  display: flex;
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  gap: 16px;
+  color: #bbbdbc;
 }
 .testimonial__slider.owl-carousel .owl-dots {
   text-align: center;
@@ -1336,10 +1370,16 @@ ol {
   Services Page
 -----------------------*/
 .services-page__intro {
-  background: #ffffff;
+  background: #bbbdbc;
+  padding: 50px 0;
 }
+.services-page__intro .section-title {
+  margin-bottom: 20px;
+}
+
 .services-page__intro .section-title h2 {
   color: #000000;
+  padding-bottom: 0;
 }
 .services-page__intro .services-page__text {
   padding-bottom: 0;
