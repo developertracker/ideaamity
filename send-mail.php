@@ -1,6 +1,7 @@
 <?php
 $name    = $_POST['name'];
 $email   = $_POST['email'];
+$website   = $_POST['website'];
 $message = $_POST['message'];
 
 $to      = "pawars.nilesh@gmail.com";
@@ -17,6 +18,10 @@ $body = "
   <tr>
     <th align='left'>Email</th>
     <td>$email</td>
+  </tr>
+  <tr>
+    <th align='left'>Email</th>
+    <td>" . (!empty($website) ? $website : 'NA') . "</td>
   </tr>
   <tr>
     <th align='left'>Message</th>
