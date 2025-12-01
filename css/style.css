@@ -161,6 +161,11 @@ ol {
   padding-bottom: 100px;
 }
 
+.sm-pad {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .text-white h1,
 .text-white h2,
 .text-white h3,
@@ -1262,7 +1267,7 @@ ol {
 
 .testimonial__text {
   padding: 30px 30px 25px 30px;
-  border: 1px solid #3d3a64;
+  border: 1px solid #bbbdbc;
   margin-bottom: 25px;
   position: relative;
   z-index: 9;
@@ -1994,6 +1999,10 @@ ol {
   overflow: hidden;
 }
 
+.contact.home-map {
+  background: #245f73;
+}
+
 .contact__map {
   height: 450px;
 }
@@ -2056,11 +2065,16 @@ ol {
 }
 
 .faqs {
-  margin-bottom: 50px;
+  background: #bbbdbc;
+  padding: 50px 0;
 }
 
-.faqs .section-title h2{
+.faqs .section-title h2 {
   color: #245f73;
+}
+
+.faqs .section-title h2:after {
+  background: #245f73;
 }
 
 .accordion-button {
@@ -2070,11 +2084,12 @@ ol {
   justify-content: center;
   color: inherit;
   outline: none;
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   text-align: left;
 }
 
-.accordion-button.focus, .accordion-button:focus {
+.accordion-button.focus,
+.accordion-button:focus {
   box-shadow: none;
   color: #0056b3;
   text-decoration: none;
@@ -2093,7 +2108,7 @@ ol {
 }
 
 .accordion-button:not(.collapsed) {
-  background: rgba(0,0,0,.125);
+  background: rgba(0, 0, 0, 0.125);
 }
 
 .accordion-button:not(.collapsed)::after {
@@ -2102,7 +2117,7 @@ ol {
 .card-header {
   padding: 0;
 }
-.card-body a:hover{
+.card-body a:hover {
   color: inherit;
 }
 
@@ -2286,12 +2301,22 @@ ol {
     margin-bottom: 50px;
   }
 
+  .counter .flex {
+    justify-content: center;
+  }
+
   .counter__item {
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
     margin-bottom: 30px;
     width: auto;
+    border-top-left-radius: 20px;
+    height: 200px;
+  }
+
+  .counter__item__text h2 {
+    font-size: 40px;
   }
 
   .counter__item::before {
@@ -2388,7 +2413,7 @@ ol {
   }
 
   .slicknav_nav {
-    background: #222222;
+    background: #245f73;
   }
 
   .slicknav_btn {
@@ -2425,6 +2450,12 @@ ol {
 
   .work__item.large__item {
     width: calc(50% - 10px);
+  }
+
+  .work__item.large__item,
+  .work__item.wide__item,
+  .work__item.small__item {
+    height: 250px !important;
   }
 
   .footer__top__social {
