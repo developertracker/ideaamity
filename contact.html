@@ -59,10 +59,10 @@
                     <div class="header__nav__option">
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
-                                <li ><a href="./index.html">Home</a></li>
+                                <li><a href="./index.html">Home</a></li>
                                 <li><a href="./about.html">About</a></li>
                                 <li><a href="./portfolio.html">Portfolio</a>
-                                   
+
                                 </li>
                                 <li><a href="./services.html">Services</a></li>
                                 <li class="active"><a href="./contact.html">Contact</a></li>
@@ -162,6 +162,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__form">
                         <h3>Get in touch</h3>
+                        <div id="msg"></div>
                         <form action="https://formsubmit.co/pawars.nilesh@gmail.com" method="POST">
                             <input type="text" placeholder="Name" required />
                             <input type="email" placeholder="Email" required />
@@ -468,6 +469,23 @@
         <img src="img/icons/whatsapp.png" />
     </a>
     <!-- whatsapp floaitng btn End -->
+
+    <!-- AJAX (no page reload) for Form submission Start-->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            fetch("send-mail.php", {
+                method: "POST",
+                body: new FormData(this)
+            })
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById("msg").innerHTML = data;
+                });
+        });
+    </script>
+    <!-- AJAX (no page reload) for Form submission End-->
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
