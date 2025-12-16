@@ -48,10 +48,10 @@
   /*------------------
 		Navigation
 	--------------------*/
-  $(".mobile-menu").slicknav({
-    prependTo: "#mobile-menu-wrap",
-    allowParentLinks: true,
-  });
+  // $(".mobile-menu").slicknav({
+  //   prependTo: "#mobile-menu-wrap",
+  //   allowParentLinks: true,
+  // });
 
   /*------------------
 		Hero Slider
@@ -190,5 +190,20 @@
           },
         }
       );
+  });
+  /*------------------
+        Header
+    --------------------*/
+  const $header = $(".header");
+  const headerHeight = $header.outerHeight();
+
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop() > headerHeight) {
+      $header.addClass("fixed");
+      $("body").css("padding-top", headerHeight);
+    } else {
+      $header.removeClass("fixed");
+      $("body").css("padding-top", "");
+    }
   });
 })(jQuery);
