@@ -2004,6 +2004,12 @@ ol {
   overflow: hidden;
   padding-top: 7px;
 }
+.contact__widget__item__text a {
+  color: #fff;
+}
+.contact__widget__item__text a:hover {
+  border-bottom: 1px solid #fff;
+}
 .contact__widget__item__text h4 {
   font-size: 22px;
   color: #ffffff;
