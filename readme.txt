@@ -1,6 +1,8 @@
-Big desktop banner size
-Mobile banner size
-Opacity keep less
-Reverse banner title and subtitle font size
-6 no. image to be removed
-block current website with coming soon.
+Thank you for using our template!
+
+For more awesome templates please visit https://colorlib.com/wp/templates/
+
+Copyright information for the template can't be altered/removed unless you purchase a license.
+More information about the license is available here: https://colorlib.com/wp/licence/
+
+Removing copyright information without the license will result in suspension of your hosting and/or domain name(s).
