@@ -50,7 +50,7 @@ style='border-collapse: collapse; font-family: Arial; width: 100%; max-width: 60
 // Email headers
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-$headers .= "From: Contact Form <no-reply@yourdomain.com>\r\n";
+$headers .= "From: Contact Form <no-reply@ideaamity.com>\r\n";
 
 // Send email
 if (mail($to, $subject, $body, $headers)) {
