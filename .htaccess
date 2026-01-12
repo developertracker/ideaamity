@@ -1,6 +1,11 @@
 RewriteEngine On
 
-# 1️⃣ Redirect .html → extensionless URL (SEO canonical)
+# Allow system files
+RewriteRule ^robots\.txt$ - [L]
+RewriteRule ^sitemap\.xml$ - [L]
+RewriteRule ^favicon\.ico$ - [L]
+
+# 1️⃣ Redirect .html → extensionless URL
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?]
 RewriteRule ^ %1 [R=301,L]
 
@@ -8,6 +13,7 @@ RewriteRule ^ %1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^/]+)/?$ $1.html [L]
+
 
 # --------------------------------------------------
 # Browser caching (Optimized for Lighthouse)
