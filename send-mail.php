@@ -17,7 +17,7 @@ if (!$name || !$email || !$message) {
     exit("Please fill all required fields.");
 }
 
-$to = "pawars.nilesh@gmail.com";
+$to = "info@ideaamity.com";
 $subject = "New Contact Form Enquiry from $name";
 
 // Plain text email (best delivery on BigRock)
