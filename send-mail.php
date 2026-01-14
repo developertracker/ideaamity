@@ -1,61 +1,41 @@
 <?php
 
-// Get form fields safely
-$name     = isset($_POST['name']) ? trim($_POST['name']) : 'NA';
-$email    = isset($_POST['email']) ? trim($_POST['email']) : 'NA';
-$website  = isset($_POST['website']) ? trim($_POST['website']) : 'NA';
-$message  = isset($_POST['message']) ? trim($_POST['message']) : 'NA';
-
-// If website field is empty show NA
-$website = !empty($website) ? $website : 'NA';
-
-// Receiver email
-$to = "pawars.nilesh@gmail.com";   // <-- CHANGE THIS
-
-// Email subject
-$subject = "New Contact Form Submission";
-
-// HTML email body
-$body = "
-<html>
-<body>
-<table border='1' cellspacing='0' cellpadding='10'
-style='border-collapse: collapse; font-family: Arial; width: 100%; max-width: 600px;'>
-
-<tr>
-  <th align='left'>Name</th>
-  <td>$name</td>
-</tr>
-
-<tr>
-  <th align='left'>Email</th>
-  <td>$email</td>
-</tr>
-
-<tr>
-  <th align='left'>Website</th>
-  <td>$website</td>
-</tr>
-
-<tr>
-  <th align='left'>Message</th>
-  <td>$message</td>
-</tr>
-
-</table>
-</body>
-</html>
-";
-
-// Email headers
-$headers  = "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/html; charset=UTF-8\r\n";
-$headers .= "From: Contact Form <no-reply@ideaamity.com>\r\n";
-
-// Send email
-if (mail($to, $subject, $body, $headers)) {
-    echo "Email sent successfully!";
-} else {
-    echo "Failed to send email.";
+// Allow only POST
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    exit("Invalid request");
 }
-?>
+
+// Clean inputs
+$name    = trim($_POST['name'] ?? '');
+$email   = trim($_POST['email'] ?? '');
+$website = trim($_POST['website'] ?? '');
+$message = trim($_POST['message'] ?? '');
+
+$website = $website ?: 'NA';
+
+// Basic validation
+if (!$name || !$email || !$message) {
+    exit("Please fill all required fields.");
+}
+
+$to = "pawars.nilesh@gmail.com";
+$subject = "New Contact Form – IdeaAmity";
+
+// Plain text email (best delivery on BigRock)
+$body = "You received a new message from ideaamity.com\n\n";
+$body .= "Name: $name\n";
+$body .= "Email: $email\n";
+$body .= "Website: $website\n\n";
+$body .= "Message:\n$message";
+
+// BigRock-safe headers
+$headers  = "From: IdeaAmity <no-reply@ideaamity.com>\r\n";
+$headers .= "Reply-To: $email\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+// Send
+if (mail($to, $subject, $body, $headers)) {
+    echo "Message sent successfully!";
+} else {
+    echo "Server mail blocked. Contact hosting.";
+}
