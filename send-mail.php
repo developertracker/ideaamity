@@ -10,7 +10,6 @@ $name    = trim($_POST['name'] ?? '');
 $email   = trim($_POST['email'] ?? '');
 $website = trim($_POST['website'] ?? '');
 $message = trim($_POST['message'] ?? '');
-
 $website = $website ?: 'NA';
 
 // Basic validation
@@ -19,13 +18,13 @@ if (!$name || !$email || !$message) {
 }
 
 $to = "pawars.nilesh@gmail.com";
-$subject = "New Contact Form – IdeaAmity";
+$subject = "New Contact Form Enquiry from $name";
 
 // Plain text email (best delivery on BigRock)
-$body = "You received a new message from ideaamity.com\n\n";
+$body = "You received a new message from ideaamity.com contact form\n\n";
 $body .= "Name: $name\n";
 $body .= "Email: $email\n";
-$body .= "Website: $website\n\n";
+$body .= "Website: $website\n";
 $body .= "Message:\n$message";
 
 // BigRock-safe headers
@@ -35,7 +34,7 @@ $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 // Send
 if (mail($to, $subject, $body, $headers)) {
-    echo "Message sent successfully!";
+    echo "Thank you.\n Your inquiry has been successfully submitted.";
 } else {
     echo "Server mail blocked. Contact hosting.";
 }

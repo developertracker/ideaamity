@@ -2125,6 +2125,10 @@ ol {
   width: 100%;
 }
 
+.contact__form {
+  position: relative;
+}
+
 .contact__form h3 {
   color: #245f73;
   font-weight: 700;
@@ -2179,9 +2183,6 @@ ol {
   color: #fff;
 }
 
-.form_container {
-  position: relative;
-}
 
 .msg {
   position: absolute;
@@ -2192,9 +2193,6 @@ ol {
   background:  rgba(0, 0, 0, 0.8);
   color: white;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .faqs {
