@@ -34,7 +34,7 @@ $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 // Send
 if (mail($to, $subject, $body, $headers)) {
-    echo "Thank you.\n Your inquiry has been successfully submitted.";
+    echo "Thank you.\nYour inquiry has been successfully submitted.";
 } else {
     echo "Server mail blocked. Contact hosting.";
 }
