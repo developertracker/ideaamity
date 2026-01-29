@@ -39,10 +39,18 @@
   });
 
   //Masonary
-  $(".work__gallery").masonry({
-    itemSelector: ".work__item",
-    columnWidth: ".grid-sizer",
-    gutter: 10,
+  document.addEventListener("DOMContentLoaded", function () {
+    var $grid = $(".work__gallery");
+
+    if (!$grid.length) return;
+
+    if (typeof $.fn.masonry === "function") {
+      $grid.masonry({
+        itemSelector: ".work__item",
+        columnWidth: ".grid-sizer",
+        gutter: 10,
+      });
+    }
   });
 
   /*------------------
